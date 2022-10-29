@@ -3,8 +3,6 @@ using EasyPlanner.Forms;
 using EasyPlanner.Printing;
 using System.Data;
 using System.Reflection;
-using System.Windows.Forms;
-using static System.ComponentModel.Design.ObjectSelectorEditor;
 using Font = System.Drawing.Font;
 
 namespace EasyPlanner
@@ -261,6 +259,61 @@ namespace EasyPlanner
                 this.Show();
         }
 
+        private void btnOptions_Click(object sender, EventArgs e)
+        {
+            SettingsForm frm = new SettingsForm();
+            frm.ShowDialog();
+            if (frm.chkAccessMode.Checked)
+                btnLogout.Visible = true;
+            else
+                btnLogout.Visible = false;
+        }
+
+        private void btnCalc_Click(object sender, EventArgs e)
+        {
+            if (dgvData.Rows.Count > 0)
+                new CalculateForm(dgvData).ShowDialog();
+        }
+
+        private void btnPrintTest_Click(object sender, EventArgs e)
+        {
+            Assembly? location = Assembly.GetEntryAssembly();
+            if (location != null)
+            {
+                string timestamp = DateTime.Now.ToShortDateString().Replace("/", "_");
+                string fileName = "\\Inventario_" + timestamp + ".pdf"; ;
+                string? path = string.Empty;
+
+
+                if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+                {
+                    path = folderBrowserDialog.SelectedPath + fileName;
+                    DataTable dtOrdered = new DataTable();
+                    dtOrdered.Columns.Add("IDPRODOTTO");
+                    dtOrdered.Columns.Add("DATA");
+                    dtOrdered.Columns.Add("MARCA");
+                    dtOrdered.Columns.Add("DESCRIZIONE");
+                    dtOrdered.Columns.Add("ALIQUOTA");
+                    dtOrdered.Columns.Add("QNT");
+                    dtOrdered.Columns.Add("PREZZO_NETTO");
+                    dtOrdered.Columns.Add("PREZZO_IVATO");
+                    dtOrdered.Columns.Add("NOTE");
+
+                    for (int row = 0; row < dgvData.Rows.Count; row++)
+                    {
+                        dtOrdered.Rows.Add(dtOrdered.NewRow());
+                        for (int col = 0; col < dgvData.Rows[row].Cells.Count; col++)
+                        {
+                            dtOrdered.Rows[row][col] = (dgvData.Rows[row].Cells[col].Value.ToString());
+                        }
+
+                    }
+
+                    PrintingUtility.CreatePDF(dtOrdered, path);
+                }
+            }
+        }
+
         private void dgvData_MouseDoubleClick(object? sender, MouseEventArgs e)
         {
             if (sender != null)
@@ -304,97 +357,6 @@ namespace EasyPlanner
             }
         }
 
-        private void dgvData_MouseWheel(object? sender, System.Windows.Forms.MouseEventArgs e)
-        {
-            if (e.Delta < 0)
-            {
-                try
-                {
-                    int rowIndex = dgvData.SelectedRows[0].Index;
-                    int displayedRows = dgvData.Rows.GetRowCount(DataGridViewElementStates.Displayed);
-                    int top = dgvData.FirstDisplayedScrollingRowIndex;
-                    int bottom = displayedRows + top - 1;
-                    dgvData.Rows[rowIndex + 1].Selected = true;
-                    if (rowIndex + 1 >= bottom)
-                        dgvData.FirstDisplayedScrollingRowIndex++;
-                }
-                catch { }
-            }
-            else
-            {
-                try
-                {
-                    int rowIndex = dgvData.SelectedRows[0].Index;
-                    dgvData.Rows[rowIndex - 1].Selected = true;
-                    if ((rowIndex - 1) < dgvData.FirstDisplayedScrollingRowIndex + 1)
-                        dgvData.FirstDisplayedScrollingRowIndex--;
-                }
-                catch { }
-            }
-        }
-
-        private void dgvData_Resize(object? sender, System.EventArgs e)
-        {
-            try
-            {
-                for (int i = 0; i <= dgvData.Rows.Count; i++)
-                {
-                    if (!dgvData.SelectedRows[0].Displayed)
-                        dgvData.FirstDisplayedScrollingRowIndex++;
-                }
-            }
-            catch { }
-        }
-
-        private void btnOptions_Click(object sender, EventArgs e)
-        {
-            SettingsForm frm = new SettingsForm();
-            frm.ShowDialog();
-            if (frm.chkAccessMode.Checked)
-                btnLogout.Visible = true;
-            else
-                btnLogout.Visible = false;
-        }
-
-        private void btnPrintTest_Click(object sender, EventArgs e)
-        {
-            Assembly? location = Assembly.GetEntryAssembly();
-            if (location != null)
-            {
-                string timestamp = DateTime.Now.ToShortDateString().Replace("/", "_");
-                string fileName = "\\Inventario_" + timestamp + ".pdf"; ;
-                string? path = string.Empty;
-
-
-                if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-                {
-                    path = folderBrowserDialog.SelectedPath + fileName;
-                    DataTable dtOrdered = new DataTable();
-                    dtOrdered.Columns.Add("IDPRODOTTO");
-                    dtOrdered.Columns.Add("DATA");
-                    dtOrdered.Columns.Add("MARCA");
-                    dtOrdered.Columns.Add("DESCRIZIONE");
-                    dtOrdered.Columns.Add("ALIQUOTA");
-                    dtOrdered.Columns.Add("QNT");
-                    dtOrdered.Columns.Add("PREZZO_NETTO");
-                    dtOrdered.Columns.Add("PREZZO_IVATO");
-                    dtOrdered.Columns.Add("NOTE");
-
-                    for (int row = 0; row < dgvData.Rows.Count; row++)
-                    {
-                        dtOrdered.Rows.Add(dtOrdered.NewRow());
-                        for (int col = 0; col < dgvData.Rows[row].Cells.Count; col++)
-                        {
-                            dtOrdered.Rows[row][col] = (dgvData.Rows[row].Cells[col].Value.ToString());
-                        }
-
-                    }
-
-                    PrintingUtility.CreatePDF(dtOrdered, path);
-                }
-            }
-        }
-
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             if (txtSearch.Text != string.Empty && dgvData.Rows.Count > 0)
@@ -423,10 +385,12 @@ namespace EasyPlanner
             }
         }
 
-        private void btnCalc_Click(object sender, EventArgs e)
+        private void MainForm_Resize(object sender, EventArgs e)
         {
-            if (dgvData.Rows.Count > 0)
-                new CalculateForm(dgvData).ShowDialog();
+            if (!dgvData.Controls.OfType<VScrollBar>().First().Visible)
+                txtSearch.Width = 197;
+            else
+                txtSearch.Width = 180;
         }
 
         private void timerView_Tick(object sender, EventArgs e)
@@ -434,6 +398,5 @@ namespace EasyPlanner
             dgvData.DefaultCellStyle.SelectionBackColor = Color.FromArgb(240, 210, 210);
             timerView.Enabled = false;
         }
-
     }
 }

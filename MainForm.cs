@@ -385,14 +385,6 @@ namespace EasyPlanner
             }
         }
 
-        private void MainForm_Resize(object sender, EventArgs e)
-        {
-            if (!dgvData.Controls.OfType<VScrollBar>().First().Visible)
-                txtSearch.Width = 197;
-            else
-                txtSearch.Width = 180;
-        }
-
         private void timerView_Tick(object sender, EventArgs e)
         {
             dgvData.DefaultCellStyle.SelectionBackColor = Color.FromArgb(240, 210, 210);

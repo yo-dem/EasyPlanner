@@ -27,7 +27,7 @@ namespace EasyPlanner.Data
         }
         public static void SetEnabled(bool b)
         {
-            string sqlComm = string.Empty;
+            string sqlComm = String.Empty;
             if (b)             
                 sqlComm = @"UPDATE TPwd SET ENABLED='TRUE'";
             else

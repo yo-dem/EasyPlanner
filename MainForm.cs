@@ -186,13 +186,14 @@ namespace EasyPlanner
         {
             int selected = 0;
             int displayPos = 0;
+            
             try
             {
                 string? idProdotto = dgvData.SelectedRows[0].Cells["IDPRODOTTO"].Value.ToString();
                 selected = dgvData.SelectedRows[0].Index;
                 displayPos = dgvData.FirstDisplayedScrollingRowIndex;
 
-                if (!string.IsNullOrEmpty(idProdotto))
+                if (!String.IsNullOrEmpty(idProdotto))
                 {
                     ProductEditForm productEditForm = new ProductEditForm(idProdotto);
                     productEditForm.ShowDialog();
@@ -282,7 +283,7 @@ namespace EasyPlanner
             {
                 string timestamp = DateTime.Now.ToShortDateString().Replace("/", "_");
                 string fileName = "\\Inventario_" + timestamp + ".pdf"; ;
-                string? path = string.Empty;
+                string? path = String.Empty;
 
 
                 if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
@@ -359,7 +360,7 @@ namespace EasyPlanner
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            if (txtSearch.Text != string.Empty && dgvData.Rows.Count > 0)
+            if (txtSearch.Text != String.Empty && dgvData.Rows.Count > 0)
             {
                 foreach (DataGridViewRow dgvr in dgvData.Rows)
                 {
@@ -389,6 +390,17 @@ namespace EasyPlanner
         {
             dgvData.DefaultCellStyle.SelectionBackColor = Color.FromArgb(240, 210, 210);
             timerView.Enabled = false;
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                if(txtSearch.Text != String.Empty)
+                    btnEdit_Click(sender, e);
+            }
         }
     }
 }

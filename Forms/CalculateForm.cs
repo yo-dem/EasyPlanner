@@ -32,7 +32,7 @@ namespace EasyPlanner.Forms
                     if (row.Table.Columns[i].ColumnName == "PREZZO_NETTO")
                     {
                         string? data = row[i].ToString();
-                        if (!string.IsNullOrEmpty(data) && data.Contains("€"))
+                        if (!String.IsNullOrEmpty(data) && data.Contains("€"))
                         {
                             data = data.Replace("€", "");
                             netto += float.Parse(data) * q;

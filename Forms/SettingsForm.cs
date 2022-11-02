@@ -14,7 +14,7 @@ namespace EasyPlanner.Forms
 
         private void btnPasswordChange_Click(object sender, EventArgs e)
         {
-            if (!(string.IsNullOrEmpty(txtOldPassword.Text) || string.IsNullOrEmpty(txtNewPassword.Text)))
+            if (!(String.IsNullOrEmpty(txtOldPassword.Text) || String.IsNullOrEmpty(txtNewPassword.Text)))
             {
                 if (ModelPwd.GetAccess(txtOldPassword.Text))
                 {

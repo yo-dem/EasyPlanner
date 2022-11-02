@@ -44,6 +44,7 @@
             this.btnAnnulla.Text = "ANNULLA";
             this.btnAnnulla.UseVisualStyleBackColor = true;
             this.btnAnnulla.Click += new System.EventHandler(this.btnAnnulla_Click);
+            this.btnAnnulla.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnAnnulla_KeyDown);
             // 
             // btnOk
             // 

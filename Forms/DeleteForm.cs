@@ -20,5 +20,11 @@
             result=false;
             this.Close();
         }
+
+        private void btnAnnulla_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+                this.Close();
+        }
     }
 }

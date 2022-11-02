@@ -34,7 +34,7 @@ namespace EasyPlanner.Forms
             lblPrezzoNetto.ForeColor = Color.Black;
             txtPrezzoIvato.ForeColor = Color.Red;
             if (txtPrezzoNetto.Text.Contains('.'))
-                txtPrezzoNetto.Text = string.Empty;
+                txtPrezzoNetto.Text = String.Empty;
             try
             {
                 double value = double.Parse(txtPrezzoNetto.Text);
@@ -42,7 +42,7 @@ namespace EasyPlanner.Forms
             }
             catch
             {
-                txtPrezzoNetto.Text = string.Empty;
+                txtPrezzoNetto.Text = String.Empty;
             }
         }
 
@@ -60,14 +60,14 @@ namespace EasyPlanner.Forms
             }
             catch
             {
-                txtPrezzoIvato.Text = string.Empty;
+                txtPrezzoIvato.Text = String.Empty;
             }
         }
 
         private void NudAliquota_ValueChanged(object? sender, EventArgs e)
         {
             lblAliquota.ForeColor = Color.Black;
-            if (txtPrezzoNetto.Text != string.Empty && txtPrezzoIvato.Text != string.Empty)
+            if (txtPrezzoNetto.Text != String.Empty && txtPrezzoIvato.Text != String.Empty)
             {
                 txtPrezzoNetto.ForeColor = Color.Red;
                 txtPrezzoIvato.ForeColor = Color.Red;
@@ -86,7 +86,7 @@ namespace EasyPlanner.Forms
        
         private void btnAddIVA_Click(object sender, EventArgs e)
         {
-            if (txtPrezzoNetto.Text != string.Empty)
+            if (txtPrezzoNetto.Text != String.Empty)
             {
                 double value = double.Parse(txtPrezzoNetto.Text);
                 double res = value + (value * int.Parse(nudAliquota.Value.ToString()) / 100);
@@ -102,7 +102,7 @@ namespace EasyPlanner.Forms
 
         private void btnRemoveIVA_Click(object sender, EventArgs e)
         {
-            if (txtPrezzoIvato.Text != string.Empty)
+            if (txtPrezzoIvato.Text != String.Empty)
             {
                 double value = double.Parse(txtPrezzoIvato.Text);
                 double res = value * 100 / (100 + int.Parse(nudAliquota.Value.ToString()));
@@ -124,22 +124,22 @@ namespace EasyPlanner.Forms
             bool res4 = true;
             bool res5 = true;
 
-            if (string.IsNullOrEmpty(txtMarca.Text))
+            if (String.IsNullOrEmpty(txtMarca.Text))
             {
                 lblMarca.ForeColor = Color.Red;
                 res1 = false;
             }
-            if (string.IsNullOrEmpty(txtDescrizione.Text))
+            if (String.IsNullOrEmpty(txtDescrizione.Text))
             {
                 lblDescrizione.ForeColor = Color.Red;
                 res2 = false;
             }
-            if (string.IsNullOrEmpty(txtPrezzoNetto.Text))
+            if (String.IsNullOrEmpty(txtPrezzoNetto.Text))
             {
                 lblPrezzoNetto.ForeColor = Color.Red;
                 res3 = false;
             }
-            if (string.IsNullOrEmpty(txtPrezzoIvato.Text))
+            if (String.IsNullOrEmpty(txtPrezzoIvato.Text))
             {
                 lblPrezzoIvato.ForeColor = Color.Red;
                 res4 = false;
@@ -159,9 +159,9 @@ namespace EasyPlanner.Forms
             {
                 txtPrezzoNetto.TextChanged -= TxtPrezzoNetto_TextChanged;
                 txtPrezzoIvato.TextChanged -= TxtPrezzoIvato_TextChanged;
-                if (!string.IsNullOrEmpty(prezzoNetto))
+                if (!String.IsNullOrEmpty(prezzoNetto))
                     txtPrezzoNetto.Text = prezzoNetto;
-                if (!string.IsNullOrEmpty(prezzoIvato))
+                if (!String.IsNullOrEmpty(prezzoIvato))
                     txtPrezzoIvato.Text = prezzoIvato;
                 txtPrezzoNetto.TextChanged += TxtPrezzoNetto_TextChanged;
                 txtPrezzoIvato.TextChanged += TxtPrezzoIvato_TextChanged;
@@ -177,13 +177,13 @@ namespace EasyPlanner.Forms
                 if (chkRipeti.Checked)
                 {
                     dtpData.Value = DateTime.Now;
-                    txtMarca.Text = string.Empty;
-                    txtDescrizione.Text = string.Empty;
+                    txtMarca.Text = String.Empty;
+                    txtDescrizione.Text = String.Empty;
                     nudAliquota.Value = 22;
                     nudQnt.Value = 1;
-                    txtPrezzoNetto.Text = string.Empty;
-                    txtPrezzoIvato.Text = string.Empty;
-                    txtNote.Text = string.Empty;
+                    txtPrezzoNetto.Text = String.Empty;
+                    txtPrezzoIvato.Text = String.Empty;
+                    txtNote.Text = String.Empty;
 
                     txtPrezzoNetto.ForeColor = Color.Black;
                     txtPrezzoIvato.ForeColor = Color.Black;

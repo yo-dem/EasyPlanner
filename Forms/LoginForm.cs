@@ -23,7 +23,7 @@ namespace EasyPlanner.Forms
                 lblPassword.Font = new Font(lblPassword.Font, FontStyle.Bold);
                 lblPassword.Text = "PASSWORD ERRATA";
             } 
-            txtPassword.Text = string.Empty;
+            txtPassword.Text = String.Empty;
             txtPassword.Focus();
         }
 

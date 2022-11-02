@@ -56,7 +56,7 @@ namespace EasyPlanner.Printing
             string datiAmministratore = "Valore netto: " + Calculate(dt);
 
             string customData = ModelInfo.GetHeaderText();
-            if (!string.IsNullOrEmpty(customData))
+            if (!String.IsNullOrEmpty(customData))
                 datiAmministratore += "\n\n" + customData;
 
             cellInfoData.Phrase = new Phrase(datiAmministratore, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 10, 1, new BaseColor(Color.Black)));
@@ -122,7 +122,7 @@ namespace EasyPlanner.Printing
                         || row.Table.Columns[i].ColumnName == "PREZZO_NETTO")
                     {
                         string? data = row[i].ToString();
-                        if (string.IsNullOrEmpty(data))
+                        if (String.IsNullOrEmpty(data))
                             data = "";
 
                         else if (row.Table.Columns[i].ColumnName == "QNT")
@@ -213,7 +213,7 @@ namespace EasyPlanner.Printing
                     if (row.Table.Columns[i].ColumnName == "PREZZO_NETTO")
                     {
                         string? data = row[i].ToString();
-                        if (!string.IsNullOrEmpty(data) && data.Contains("€"))
+                        if (!String.IsNullOrEmpty(data) && data.Contains("€"))
                         {
                             data = data.Replace("€", "");
                             netto += float.Parse(data) * q;
@@ -276,7 +276,7 @@ namespace EasyPlanner.Printing
                     if (row.Table.Columns[i].ColumnName == "PREZZO_NETTO")
                     {
                         string? data = row[i].ToString();
-                        if (!string.IsNullOrEmpty(data) && data.Contains("€"))
+                        if (!String.IsNullOrEmpty(data) && data.Contains("€"))
                         {
                             data = data.Replace("€", "");
                             netto += float.Parse(data) * q;
@@ -319,7 +319,7 @@ namespace EasyPlanner.Printing
             string datiAmministratore = "Valore netto: " + Calculate(dt);
 
             string customData = ModelInfo.GetHeaderText();
-            if (!string.IsNullOrEmpty(customData))
+            if (!String.IsNullOrEmpty(customData))
                 datiAmministratore += "\n\n" + customData;
 
             cellInfoData.Phrase = new Phrase(datiAmministratore, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 10, 1, new BaseColor(Color.Black)));
@@ -387,7 +387,7 @@ namespace EasyPlanner.Printing
                         || row.Table.Columns[i].ColumnName == "PREZZO_IVATO")
                     {
                         string? data = row[i].ToString();
-                        if (string.IsNullOrEmpty(data))
+                        if (String.IsNullOrEmpty(data))
                             data = "";
 
                         else if (row.Table.Columns[i].ColumnName == "QNT")
@@ -492,7 +492,7 @@ namespace EasyPlanner.Printing
                     if (row.Table.Columns[i].ColumnName == "PREZZO_NETTO")
                     {
                         string? data = row[i].ToString();
-                        if (!string.IsNullOrEmpty(data) && data.Contains("€"))
+                        if (!String.IsNullOrEmpty(data) && data.Contains("€"))
                         {
                             data = data.Replace("€", "");
                             netto += float.Parse(data) * q;
@@ -513,7 +513,7 @@ namespace EasyPlanner.Printing
                     if (row.Table.Columns[i].ColumnName == "PREZZO_IVATO")
                     {
                         string? data = row[i].ToString();
-                        if (!string.IsNullOrEmpty(data) && data.Contains("€"))
+                        if (!String.IsNullOrEmpty(data) && data.Contains("€"))
                         {
                             data = data.Replace("€", "");
                             ivato += float.Parse(data) * q;

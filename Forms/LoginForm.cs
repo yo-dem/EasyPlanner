@@ -35,8 +35,7 @@ namespace EasyPlanner.Forms
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!logged)
-                Application.Exit();
-                
+                Application.Exit();      
         }
     }
 }

@@ -19,9 +19,8 @@ namespace EasyPlanner
             SetDataGridStyles();
 
             dgvData.MouseDoubleClick += dgvData_MouseDoubleClick;
-            //dgvData.MouseWheel += dgvData_MouseWheel;
-            //dgvData.Resize += dgvData_Resize;
-            dgvData.KeyDown += DgvData_KeyDown;
+            dgvData.KeyDown += dgvData_KeyDown;
+            dgvData.SelectionChanged += dgvData_SelectionChanged;
 
             if (ModelPwd.IsEnabled())
                 btnLogout.Visible = true;
@@ -178,7 +177,7 @@ namespace EasyPlanner
             productInsertForm.ShowDialog();
             ModelProdotti.getProdotti(dgvData);
             dgvData.DefaultCellStyle.SelectionBackColor = Color.FromArgb(200, 200, 230);
-            timerView.Interval = 2000;
+            timerView.Interval = 3000;
             timerView.Enabled = true;
         }
 
@@ -209,7 +208,7 @@ namespace EasyPlanner
                         dgvData.Rows[selected].Selected = true;
                         dgvData.FirstDisplayedScrollingRowIndex = displayPos;
                         dgvData.DefaultCellStyle.SelectionBackColor = Color.FromArgb(200, 200, 230);
-                        timerView.Interval = 1000;
+                        timerView.Interval = 3000;
                         timerView.Enabled = true;
                     }
                 }
@@ -321,7 +320,7 @@ namespace EasyPlanner
                 btnEdit_Click(sender, e);
         }
 
-        private void DgvData_KeyDown(object? sender, KeyEventArgs e)
+        private void dgvData_KeyDown(object? sender, KeyEventArgs e)
         {
             e.Handled = true;
             if (sender != null && e.KeyCode == Keys.Return)
@@ -358,6 +357,11 @@ namespace EasyPlanner
             }
         }
 
+        private void dgvData_SelectionChanged(object? sender, EventArgs e)
+        {
+            dgvData.DefaultCellStyle.SelectionBackColor = Color.FromArgb(240, 210, 210);
+        }
+
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             if (txtSearch.Text != String.Empty && dgvData.Rows.Count > 0)
@@ -373,7 +377,7 @@ namespace EasyPlanner
                             dgvData.Rows[dgvr.Index].Selected = true;
                             dgvData.FirstDisplayedScrollingRowIndex = dgvData.SelectedRows[0].Index;
                             dgvData.DefaultCellStyle.SelectionBackColor = Color.FromArgb(200, 200, 230);
-                            timerView.Interval = 5000;
+                            timerView.Interval = 3000;
                             timerView.Enabled = true;
                             return;
                         }
@@ -386,21 +390,27 @@ namespace EasyPlanner
             }
         }
 
-        private void timerView_Tick(object sender, EventArgs e)
-        {
-            dgvData.DefaultCellStyle.SelectionBackColor = Color.FromArgb(240, 210, 210);
-            timerView.Enabled = false;
-        }
-
         private void txtSearch_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 e.Handled = true;
                 e.SuppressKeyPress = true;
-                if(txtSearch.Text != String.Empty)
+                if (txtSearch.Text != String.Empty)
                     btnEdit_Click(sender, e);
             }
         }
+
+        private void txtSearch_Leave(object sender, EventArgs e)
+        {
+            txtSearch.Text = String.Empty;
+        }
+
+        private void timerView_Tick(object sender, EventArgs e)
+        {
+            dgvData.DefaultCellStyle.SelectionBackColor = Color.FromArgb(240, 210, 210);
+            timerView.Enabled = false;
+        }
+
     }
 }

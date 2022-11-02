@@ -6,33 +6,34 @@ namespace EasyPlanner.Forms
 {
     public partial class ProductEditForm : Form
     {
-        public bool isDelete = false;
         string idProdotto;
+        public bool isDelete = false;
+        
         public ProductEditForm(string idProdotto)
         {
             InitializeComponent();
+            this.idProdotto = idProdotto;
 
-            txtMarca.TextChanged += TxtMarca_TextChanged;
-            txtMarca.KeyDown += TxtMarca_KeyDown;
-            txtDescrizione.TextChanged += TxtDescrizione_TextChanged;
+            txtMarca.TextChanged += txtMarca_TextChanged;
+            txtMarca.KeyDown += txtMarca_KeyDown;
+            txtDescrizione.TextChanged += txtDescrizione_TextChanged;
             txtPrezzoNetto.TextChanged += txtPrezzoNetto_TextChanged;
             txtPrezzoIvato.TextChanged += txtPrezzoIvato_TextChanged;
-            nudAliquota.ValueChanged += NudAliquota_ValueChanged;
-            txtNote.GotFocus += TxtNote_GotFocus;
-            txtNote.LostFocus += TxtNote_LostFocus;
-
-            this.idProdotto = idProdotto;
+            nudAliquota.ValueChanged += nudAliquota_ValueChanged;
+            txtNote.GotFocus += txtNote_GotFocus;
+            txtNote.LostFocus += txtNote_LostFocus;
+            
             LoadForm();
             txtPrezzoNetto.ForeColor = Color.Black;
             txtPrezzoIvato.ForeColor = Color.Black;
         }
 
-        private void TxtMarca_TextChanged(object? sender, EventArgs e)
+        private void txtMarca_TextChanged(object? sender, EventArgs e)
         {
             lblMarca.ForeColor = Color.Black;
         }
 
-        private void TxtMarca_KeyDown(object? sender, KeyEventArgs e)
+        private void txtMarca_KeyDown(object? sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
             {
@@ -40,7 +41,7 @@ namespace EasyPlanner.Forms
             }
         }
 
-        private void TxtDescrizione_TextChanged(object? sender, EventArgs e)
+        private void txtDescrizione_TextChanged(object? sender, EventArgs e)
         {
             lblDescrizione.ForeColor = Color.Black;
         }
@@ -77,7 +78,7 @@ namespace EasyPlanner.Forms
             }
         }
 
-        private void NudAliquota_ValueChanged(object? sender, EventArgs e)
+        private void nudAliquota_ValueChanged(object? sender, EventArgs e)
         {
             if (txtPrezzoNetto.Text != String.Empty && txtPrezzoIvato.Text != String.Empty)
             {
@@ -86,12 +87,12 @@ namespace EasyPlanner.Forms
             }
         }
 
-        private void TxtNote_GotFocus(object? sender, EventArgs e)
+        private void txtNote_GotFocus(object? sender, EventArgs e)
         {
             this.AcceptButton = null;
         }
 
-        private void TxtNote_LostFocus(object? sender, EventArgs e)
+        private void txtNote_LostFocus(object? sender, EventArgs e)
         {
             this.AcceptButton = this.btnOk;
         }

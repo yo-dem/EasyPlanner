@@ -42,10 +42,9 @@
             // 
             this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOk.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnOk.Location = new System.Drawing.Point(187, 268);
-            this.btnOk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOk.Location = new System.Drawing.Point(221, 357);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(86, 41);
+            this.btnOk.Size = new System.Drawing.Size(98, 55);
             this.btnOk.TabIndex = 2;
             this.btnOk.Text = "CONTINUA";
             this.btnOk.UseVisualStyleBackColor = true;
@@ -55,10 +54,9 @@
             // 
             this.btnNo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNo.Location = new System.Drawing.Point(10, 268);
-            this.btnNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNo.Location = new System.Drawing.Point(11, 357);
             this.btnNo.Name = "btnNo";
-            this.btnNo.Size = new System.Drawing.Size(172, 41);
+            this.btnNo.Size = new System.Drawing.Size(204, 55);
             this.btnNo.TabIndex = 1;
             this.btnNo.Text = "ESCI";
             this.btnNo.UseVisualStyleBackColor = true;
@@ -69,11 +67,10 @@
             this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPassword.Location = new System.Drawing.Point(10, 232);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPassword.Location = new System.Drawing.Point(11, 309);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(264, 31);
+            this.txtPassword.Size = new System.Drawing.Size(308, 36);
             this.txtPassword.TabIndex = 0;
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -81,9 +78,9 @@
             // 
             this.lblPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(12, 216);
+            this.lblPassword.Location = new System.Drawing.Point(14, 288);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(68, 15);
+            this.lblPassword.Size = new System.Drawing.Size(87, 20);
             this.lblPassword.TabIndex = 3;
             this.lblPassword.Text = "PASSWORD";
             // 
@@ -92,9 +89,8 @@
             this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(110)))), ((int)(((byte)(153)))));
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
-            this.pnlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(284, 8);
+            this.pnlTop.Size = new System.Drawing.Size(332, 11);
             this.pnlTop.TabIndex = 5;
             // 
             // pctLogo
@@ -103,10 +99,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pctLogo.Image = global::EasyPlanner.Properties.Resources.CapelliAndManieColor;
-            this.pctLogo.Location = new System.Drawing.Point(10, 28);
-            this.pctLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pctLogo.Location = new System.Drawing.Point(11, 37);
             this.pctLogo.Name = "pctLogo";
-            this.pctLogo.Size = new System.Drawing.Size(263, 186);
+            this.pctLogo.Size = new System.Drawing.Size(308, 248);
             this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctLogo.TabIndex = 6;
             this.pctLogo.TabStop = false;
@@ -114,9 +109,9 @@
             // LoginForm
             // 
             this.AcceptButton = this.btnOk;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 319);
+            this.ClientSize = new System.Drawing.Size(332, 425);
             this.Controls.Add(this.pctLogo);
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.lblPassword);
@@ -125,7 +120,6 @@
             this.Controls.Add(this.btnOk);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoginForm";

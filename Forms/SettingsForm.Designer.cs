@@ -54,9 +54,9 @@
             // lblOldPassword
             // 
             this.lblOldPassword.AutoSize = true;
-            this.lblOldPassword.Location = new System.Drawing.Point(6, 18);
+            this.lblOldPassword.Location = new System.Drawing.Point(7, 24);
             this.lblOldPassword.Name = "lblOldPassword";
-            this.lblOldPassword.Size = new System.Drawing.Size(118, 15);
+            this.lblOldPassword.Size = new System.Drawing.Size(151, 20);
             this.lblOldPassword.TabIndex = 0;
             this.lblOldPassword.Text = "PASSWORD ATTUALE";
             // 
@@ -69,29 +69,26 @@
             this.Password.Controls.Add(this.lblNewPassword);
             this.Password.Controls.Add(this.txtOldPassword);
             this.Password.Controls.Add(this.lblOldPassword);
-            this.Password.Location = new System.Drawing.Point(10, 26);
-            this.Password.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Password.Location = new System.Drawing.Point(11, 35);
             this.Password.Name = "Password";
-            this.Password.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Password.Size = new System.Drawing.Size(200, 241);
+            this.Password.Size = new System.Drawing.Size(229, 321);
             this.Password.TabIndex = 0;
             this.Password.TabStop = false;
             this.Password.Text = "CAMBIO PASSWORD";
             // 
             // lblPasswordResult
             // 
-            this.lblPasswordResult.Location = new System.Drawing.Point(6, 137);
+            this.lblPasswordResult.Location = new System.Drawing.Point(7, 183);
             this.lblPasswordResult.Name = "lblPasswordResult";
-            this.lblPasswordResult.Size = new System.Drawing.Size(188, 24);
+            this.lblPasswordResult.Size = new System.Drawing.Size(215, 32);
             this.lblPasswordResult.TabIndex = 0;
             this.lblPasswordResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnPasswordReset
             // 
-            this.btnPasswordReset.Location = new System.Drawing.Point(6, 202);
-            this.btnPasswordReset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPasswordReset.Location = new System.Drawing.Point(7, 269);
             this.btnPasswordReset.Name = "btnPasswordReset";
-            this.btnPasswordReset.Size = new System.Drawing.Size(188, 35);
+            this.btnPasswordReset.Size = new System.Drawing.Size(215, 47);
             this.btnPasswordReset.TabIndex = 3;
             this.btnPasswordReset.Text = "RESET";
             this.btnPasswordReset.UseVisualStyleBackColor = true;
@@ -99,10 +96,9 @@
             // 
             // btnPasswordChange
             // 
-            this.btnPasswordChange.Location = new System.Drawing.Point(6, 163);
-            this.btnPasswordChange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPasswordChange.Location = new System.Drawing.Point(7, 217);
             this.btnPasswordChange.Name = "btnPasswordChange";
-            this.btnPasswordChange.Size = new System.Drawing.Size(188, 35);
+            this.btnPasswordChange.Size = new System.Drawing.Size(215, 47);
             this.btnPasswordChange.TabIndex = 2;
             this.btnPasswordChange.Text = "CAMBIA PASSWORD";
             this.btnPasswordChange.UseVisualStyleBackColor = true;
@@ -110,39 +106,35 @@
             // 
             // txtNewPassword
             // 
-            this.txtNewPassword.Location = new System.Drawing.Point(6, 77);
-            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNewPassword.Location = new System.Drawing.Point(7, 103);
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.PasswordChar = '*';
-            this.txtNewPassword.Size = new System.Drawing.Size(188, 23);
+            this.txtNewPassword.Size = new System.Drawing.Size(214, 27);
             this.txtNewPassword.TabIndex = 1;
             // 
             // lblNewPassword
             // 
             this.lblNewPassword.AutoSize = true;
-            this.lblNewPassword.Location = new System.Drawing.Point(6, 60);
+            this.lblNewPassword.Location = new System.Drawing.Point(7, 80);
             this.lblNewPassword.Name = "lblNewPassword";
-            this.lblNewPassword.Size = new System.Drawing.Size(111, 15);
+            this.lblNewPassword.Size = new System.Drawing.Size(141, 20);
             this.lblNewPassword.TabIndex = 0;
             this.lblNewPassword.Text = "NUOVA PASSWORD";
             // 
             // txtOldPassword
             // 
-            this.txtOldPassword.Location = new System.Drawing.Point(6, 35);
-            this.txtOldPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtOldPassword.Location = new System.Drawing.Point(7, 47);
             this.txtOldPassword.Name = "txtOldPassword";
             this.txtOldPassword.PasswordChar = '*';
-            this.txtOldPassword.Size = new System.Drawing.Size(188, 23);
+            this.txtOldPassword.Size = new System.Drawing.Size(214, 27);
             this.txtOldPassword.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.chkAccessMode);
-            this.groupBox1.Location = new System.Drawing.Point(10, 271);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Location = new System.Drawing.Point(11, 361);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(200, 48);
+            this.groupBox1.Size = new System.Drawing.Size(229, 64);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Accesso";
@@ -152,10 +144,9 @@
             this.chkAccessMode.AutoSize = true;
             this.chkAccessMode.Checked = true;
             this.chkAccessMode.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkAccessMode.Location = new System.Drawing.Point(6, 20);
-            this.chkAccessMode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkAccessMode.Location = new System.Drawing.Point(7, 27);
             this.chkAccessMode.Name = "chkAccessMode";
-            this.chkAccessMode.Size = new System.Drawing.Size(154, 19);
+            this.chkAccessMode.Size = new System.Drawing.Size(194, 24);
             this.chkAccessMode.TabIndex = 0;
             this.chkAccessMode.Text = "ABILITA INS. PASSWORD";
             this.chkAccessMode.UseVisualStyleBackColor = true;
@@ -167,29 +158,26 @@
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.btnHeaderSave);
             this.groupBox2.Controls.Add(this.txtHeader);
-            this.groupBox2.Location = new System.Drawing.Point(215, 26);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Location = new System.Drawing.Point(246, 35);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(200, 241);
+            this.groupBox2.Size = new System.Drawing.Size(229, 321);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "INTESTAZIONE DI STAMPA";
             // 
             // lblHeaderResult
             // 
-            this.lblHeaderResult.Location = new System.Drawing.Point(6, 137);
+            this.lblHeaderResult.Location = new System.Drawing.Point(7, 183);
             this.lblHeaderResult.Name = "lblHeaderResult";
-            this.lblHeaderResult.Size = new System.Drawing.Size(188, 24);
+            this.lblHeaderResult.Size = new System.Drawing.Size(215, 32);
             this.lblHeaderResult.TabIndex = 2;
             this.lblHeaderResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(6, 202);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(7, 269);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(188, 35);
+            this.button1.Size = new System.Drawing.Size(215, 47);
             this.button1.TabIndex = 2;
             this.button1.Text = "RESET";
             this.button1.UseVisualStyleBackColor = true;
@@ -197,10 +185,9 @@
             // 
             // btnHeaderSave
             // 
-            this.btnHeaderSave.Location = new System.Drawing.Point(6, 163);
-            this.btnHeaderSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnHeaderSave.Location = new System.Drawing.Point(7, 217);
             this.btnHeaderSave.Name = "btnHeaderSave";
-            this.btnHeaderSave.Size = new System.Drawing.Size(188, 35);
+            this.btnHeaderSave.Size = new System.Drawing.Size(215, 47);
             this.btnHeaderSave.TabIndex = 1;
             this.btnHeaderSave.Text = "SALVA INTESTAZIONE";
             this.btnHeaderSave.UseVisualStyleBackColor = true;
@@ -208,19 +195,17 @@
             // 
             // txtHeader
             // 
-            this.txtHeader.Location = new System.Drawing.Point(6, 35);
-            this.txtHeader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtHeader.Location = new System.Drawing.Point(7, 47);
             this.txtHeader.Multiline = true;
             this.txtHeader.Name = "txtHeader";
-            this.txtHeader.Size = new System.Drawing.Size(190, 76);
+            this.txtHeader.Size = new System.Drawing.Size(217, 83);
             this.txtHeader.TabIndex = 0;
             // 
             // btnSaveData
             // 
-            this.btnSaveData.Location = new System.Drawing.Point(215, 285);
-            this.btnSaveData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSaveData.Location = new System.Drawing.Point(246, 380);
             this.btnSaveData.Name = "btnSaveData";
-            this.btnSaveData.Size = new System.Drawing.Size(200, 28);
+            this.btnSaveData.Size = new System.Drawing.Size(229, 37);
             this.btnSaveData.TabIndex = 3;
             this.btnSaveData.Text = "SALVA DATI";
             this.btnSaveData.UseVisualStyleBackColor = true;
@@ -230,10 +215,9 @@
             // 
             this.btnOk.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnOk.Image = global::EasyPlanner.Properties.Resources.okImage;
-            this.btnOk.Location = new System.Drawing.Point(11, 323);
-            this.btnOk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOk.Location = new System.Drawing.Point(13, 431);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(404, 51);
+            this.btnOk.Size = new System.Drawing.Size(462, 68);
             this.btnOk.TabIndex = 4;
             this.btnOk.Text = "OK";
             this.btnOk.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -246,16 +230,15 @@
             this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(110)))), ((int)(((byte)(153)))));
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
-            this.pnlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(425, 8);
+            this.pnlTop.Size = new System.Drawing.Size(486, 11);
             this.pnlTop.TabIndex = 6;
             // 
             // SettingsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 385);
+            this.ClientSize = new System.Drawing.Size(486, 513);
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.btnSaveData);
             this.Controls.Add(this.btnOk);
@@ -263,7 +246,6 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Password);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "SettingsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SETTINGS";

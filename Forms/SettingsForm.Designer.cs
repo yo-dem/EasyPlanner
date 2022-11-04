@@ -46,6 +46,7 @@
             this.btnSaveData = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.lblHeader = new System.Windows.Forms.Label();
             this.Password.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -154,6 +155,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblHeader);
             this.groupBox2.Controls.Add(this.lblHeaderResult);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.btnHeaderSave);
@@ -195,10 +197,10 @@
             // 
             // txtHeader
             // 
-            this.txtHeader.Location = new System.Drawing.Point(7, 47);
-            this.txtHeader.Multiline = true;
+            this.txtHeader.Location = new System.Drawing.Point(5, 103);
+            this.txtHeader.MaxLength = 30;
             this.txtHeader.Name = "txtHeader";
-            this.txtHeader.Size = new System.Drawing.Size(217, 83);
+            this.txtHeader.Size = new System.Drawing.Size(217, 27);
             this.txtHeader.TabIndex = 0;
             // 
             // btnSaveData
@@ -233,6 +235,15 @@
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(486, 11);
             this.pnlTop.TabIndex = 6;
+            // 
+            // lblHeader
+            // 
+            this.lblHeader.AutoSize = true;
+            this.lblHeader.Location = new System.Drawing.Point(5, 80);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(169, 20);
+            this.lblHeader.TabIndex = 3;
+            this.lblHeader.Text = "PERSONALIZZA PAGINA";
             // 
             // SettingsForm
             // 
@@ -279,5 +290,6 @@
         private Button btnSaveData;
         private Panel pnlTop;
         private Button button1;
+        private Label lblHeader;
     }
 }

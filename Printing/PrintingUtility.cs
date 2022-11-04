@@ -53,7 +53,7 @@ namespace EasyPlanner.Printing
             tableHeaderInfo.AddCell(cellInfoEmpty);
 
             PdfPCell cellInfoData = new PdfPCell();
-            string datiAmministratore = "Valore netto: " + Calculate(dt);
+            string datiAmministratore = "P.IVA 05930400873\n\nTotale netto: " + Calculate(dt);
 
             string customData = ModelInfo.GetHeaderText();
             if (!String.IsNullOrEmpty(customData))

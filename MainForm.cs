@@ -215,8 +215,11 @@ namespace EasyPlanner
             }
             catch
             {
-                dgvData.Rows[--selected].Selected = true;
-                dgvData.FirstDisplayedScrollingRowIndex = displayPos;
+                if (dgvData.Rows.Count != 0)
+                {
+                    dgvData.Rows[--selected].Selected = true;
+                    dgvData.FirstDisplayedScrollingRowIndex = displayPos;
+                }
             }
         }
 
@@ -245,8 +248,11 @@ namespace EasyPlanner
             }
             catch
             {
-                dgvData.Rows[--selected].Selected = true;
-                dgvData.FirstDisplayedScrollingRowIndex = displayPos;
+                if (dgvData.Rows.Count != 0)
+                {
+                    dgvData.Rows[--selected].Selected = true;
+                    dgvData.FirstDisplayedScrollingRowIndex = displayPos;
+                }
             }
         }
 
